@@ -1,1 +1,12 @@
-// this is where the javascript will go
+var view = {
+  displayMessage: function (msg) {
+    var messageArea = document.getElementById('messageArea')
+    messageArea.innerHTML = msg
+  },
+  displayHit: function (location) {
+
+  },
+  displayMiss: function (location) {
+
+  }
+}
