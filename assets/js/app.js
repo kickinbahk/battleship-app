@@ -26,12 +26,24 @@ var model = {
   fire: function (guess) {
     for (var i = 0; i < this.numShips; i++) {
       var ship = this.ships[i]
-      var locations = ship.locations
-      var index = locations.indexOf(guess)
+      var index = ship.locations.indexOf(guess)
 
       if (index >= 0) {
-        // hit 
+        ship.hits[index] = 'hit'
+        if (this.isSunk(ship)) {
+          this.shipsSunk++
+        }
+        return true
       }
     }
+    return false
+  },
+  isSunk: function (ship) {
+    for (var i = 0; i < this.shipLength; i++) {
+      if (ship.hits[i] !== 'hit') {
+        return false
+      }
+    }
+    return true
   }
 }
