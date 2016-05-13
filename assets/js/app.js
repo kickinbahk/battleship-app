@@ -56,7 +56,15 @@ var model = {
 var controller = {
   guesses: 0,
   processGuess: function (guess) {
-    // TODO: process the guess
+    var location = parseGuess(guess)
+
+    if (location) {
+      this.guesses++
+      var hit = model.fire(location)
+      if (hit && model.shipsSunk === model.numShips) {
+        view.displayMessage(`You sank all my battleships in ${this.guesses} guesses!`)
+      }
+    }
   }
 }
 
@@ -83,8 +91,3 @@ function parseGuess (guess) {
   }
   return null
 }
-
-console.log(parseGuess('A0'))
-console.log(parseGuess('B6'))
-console.log(parseGuess('G3'))
-console.log(parseGuess('H0'))
