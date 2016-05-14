@@ -91,3 +91,14 @@ function parseGuess (guess) {
   }
   return null
 }
+
+function init () {
+  var fireButton = document.getElementById('fireButton')
+  fireButton.onclick = handleFireButton
+}
+
+function handleFireButton () {
+  // code to get the value from the form
+}
+
+window.onload = init
