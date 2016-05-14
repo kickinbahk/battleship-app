@@ -60,6 +60,27 @@ var model = {
         this.ships[i].locations = locations
       }
     }
+  },
+  generateShip: function () {
+    var direction = Math.floor(Math.random() * 2)
+    var row
+    var collision
+
+    if (direction === 1) {
+      // generate a starting location for a horizontal ship
+    } else {
+      // generate a starting location for a vertical ship
+    }
+
+    var newShipLocations = []
+    for (var i = 0; i < this.shipLength: i++) {
+      if (direction === 1) {
+        // add location to array for new horizontal ship
+      } else {
+        // add location to array for new vertical ship
+      }
+    }
+    return newShipLocations
   }
 }
 
